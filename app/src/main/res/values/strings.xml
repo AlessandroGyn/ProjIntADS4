@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Vamos Brincar</string>
+    <string name="txtBemVindo">Bem Vindo,</string>
+    <string name="btnVamosBrincar">Vamos Brincar!</string>
+    <string name="txtTimerDialog">O jogo acabou!</string>
+    <string name="bt_timer">OK</string>
+    <string name="text_score">Resposta Certa: </string>
+    <string name="linear_incorrect_answer">Resposta Errada: </string>
+    <string name="BtnNext">Next</string>
+
+</resources>
