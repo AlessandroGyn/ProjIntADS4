@@ -1,5 +1,4 @@
 package com.example.vamosbrincar2;
-
 import android.content.Context;
 import android.media.MediaPlayer;
 
@@ -92,9 +91,8 @@ public class PlayAudioForAnswers {
             public void onCompletion(MediaPlayer mp) {
                 mediaPlayer.release();
             }
+
         });
-
-
 
     }
 

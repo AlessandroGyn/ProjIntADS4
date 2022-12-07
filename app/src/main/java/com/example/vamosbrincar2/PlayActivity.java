@@ -51,7 +51,6 @@ public class PlayActivity extends AppCompatActivity {
     private long timeleftinMillis;
     private long backPressedTime;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
