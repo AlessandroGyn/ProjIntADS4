@@ -105,11 +105,11 @@ public class ResultActivity extends AppCompatActivity {
     public void onBackPressed() {
         if (backPressedTime + 2000 > System.currentTimeMillis()){
 
-            Intent intent = new Intent(ResultActivity.this,PlayActivity.class);
+            Intent intent = new Intent(ResultActivity.this,MainActivity.class);
             startActivity(intent);
 
         }else {
-            Toast.makeText(this, "Press Again to Exit", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Aperte de novo para Sair", Toast.LENGTH_SHORT).show();
 
         }
         backPressedTime = System.currentTimeMillis();

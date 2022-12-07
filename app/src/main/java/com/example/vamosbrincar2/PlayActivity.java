@@ -674,7 +674,6 @@ public class PlayActivity extends AppCompatActivity {
 
         }else {
             Toast.makeText(this, "Aperte novamente para Sair", Toast.LENGTH_SHORT).show();
-
         }
         backPressedTime = System.currentTimeMillis();
     }

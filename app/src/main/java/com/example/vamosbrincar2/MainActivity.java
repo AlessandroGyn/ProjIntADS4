@@ -25,7 +25,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Intent playActivity = new Intent(this,PlayActivity.class);
         startActivity(playActivity);
         Toast.makeText(this, "Responda as perguntas dentro do tempo", Toast.LENGTH_SHORT).show();
-        Toast.makeText(this, "Evolua de Fase", Toast.LENGTH_SHORT).show();
-        Toast.makeText(this, "Seja o melhor!", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "Você é o melhor!", Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public void onBackPressed() {
+        finishAffinity();
     }
 }
