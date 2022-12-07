@@ -45,6 +45,6 @@ public class SplashActivity extends AppCompatActivity {
                 player.release();
                 finish(); // finaliza a splash
             }
-        },5000); // depois de 5 segundos executa o metodo run
+        },4000); // depois de 4 segundos executa o metodo run
     }
 }

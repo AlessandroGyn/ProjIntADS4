@@ -34,8 +34,8 @@ public class WrongDialog {
         btWrongDialog.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                wrongDialog.dismiss();
                 mplayActivity.showQuestions();
+                wrongDialog.dismiss();
             }
         });
 

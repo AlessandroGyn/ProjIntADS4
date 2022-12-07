@@ -1,6 +1,9 @@
 package com.example.vamosbrincar2;
 import android.content.Intent;
+import android.content.res.Resources;
 import android.graphics.Color;
+import android.media.MediaPlayer;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.os.Handler;
@@ -48,10 +51,13 @@ public class PlayActivity extends AppCompatActivity {
     private long timeleftinMillis;
     private long backPressedTime;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_play);
+
+
 
         setupUI();
 
@@ -92,8 +98,10 @@ public class PlayActivity extends AppCompatActivity {
         showQuestions();   // calling showQuestion() method
 
         rbGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
+                String questaoAtual = currentQuestions.getQuestion();
 
                 switch (checkedId){
 
@@ -104,12 +112,33 @@ public class PlayActivity extends AppCompatActivity {
                         rb3.setTextColor(Color.BLACK);
                         rb4.setTextColor(Color.BLACK);
 
-
-
                         rb1.setBackground(ContextCompat.getDrawable(getApplicationContext(),R.drawable.when_answer_selected));
                         rb2.setBackground(ContextCompat.getDrawable(getApplicationContext(),R.drawable.option_default_background));
                         rb3.setBackground(ContextCompat.getDrawable(getApplicationContext(),R.drawable.option_default_background));
                         rb4.setBackground(ContextCompat.getDrawable(getApplicationContext(),R.drawable.option_default_background));
+
+
+                        switch (questaoAtual) {
+                            case "A":
+                                playAudioForAnswers.setAudioforAnswer(4);
+                                break;
+                            case "B":
+                                playAudioForAnswers.setAudioforAnswer(11);
+                                break;
+                            case "C":
+                                playAudioForAnswers.setAudioforAnswer(11);
+                                break;
+                            case "D":
+                                playAudioForAnswers.setAudioforAnswer(7);
+                                break;
+                            case "E":
+                                playAudioForAnswers.setAudioforAnswer(11);
+                                break;
+                            case "F":
+                                playAudioForAnswers.setAudioforAnswer(11);
+                                break;
+                        }
+
 
                         break;
                     case R.id.radio_button2:
@@ -119,12 +148,34 @@ public class PlayActivity extends AppCompatActivity {
                         rb3.setTextColor(Color.BLACK);
                         rb4.setTextColor(Color.BLACK);
 
-
-
                         rb2.setBackground(ContextCompat.getDrawable(getApplicationContext(),R.drawable.when_answer_selected));
                         rb1.setBackground(ContextCompat.getDrawable(getApplicationContext(),R.drawable.option_default_background));
                         rb3.setBackground(ContextCompat.getDrawable(getApplicationContext(),R.drawable.option_default_background));
                         rb4.setBackground(ContextCompat.getDrawable(getApplicationContext(),R.drawable.option_default_background));
+
+
+                            switch (questaoAtual) {
+                                case "A":
+                                    playAudioForAnswers.setAudioforAnswer(12);
+                                    //a(4), b(5), c(6), d(7), e(8), f(9), j(10), r(11), w(12), x(13)
+                                    break;
+                                case "B":
+                                    playAudioForAnswers.setAudioforAnswer(5);
+                                    break;
+                                case "C":
+                                    playAudioForAnswers.setAudioforAnswer(12);
+                                    break;
+                                case "D":
+                                    playAudioForAnswers.setAudioforAnswer(12);
+                                    break;
+                                case "E":
+                                    playAudioForAnswers.setAudioforAnswer(12);
+                                    break;
+                                case "F":
+                                    playAudioForAnswers.setAudioforAnswer(9); //certo
+                                    break;
+                            }
+
 
                         break;
 
@@ -139,6 +190,30 @@ public class PlayActivity extends AppCompatActivity {
                         rb2.setBackground(ContextCompat.getDrawable(getApplicationContext(),R.drawable.option_default_background));
                         rb4.setBackground(ContextCompat.getDrawable(getApplicationContext(),R.drawable.option_default_background));
                         rb1.setBackground(ContextCompat.getDrawable(getApplicationContext(),R.drawable.option_default_background));
+
+
+                            switch (questaoAtual) {
+                                case "A":
+                                    playAudioForAnswers.setAudioforAnswer(13);
+                                    //a(4), b(5), c(6), d(7), e(8), f(9), j(10), r(11), w(12), x(13)
+                                    break;
+                                case "B":
+                                    playAudioForAnswers.setAudioforAnswer(13);
+                                    break;
+                                case "C":
+                                    playAudioForAnswers.setAudioforAnswer(6); //certo
+                                    break;
+                                case "D":
+                                    playAudioForAnswers.setAudioforAnswer(13);
+                                    break;
+                                case "E":
+                                    playAudioForAnswers.setAudioforAnswer(13);
+                                    break;
+                                case "F":
+                                    playAudioForAnswers.setAudioforAnswer(13);
+                                    break;
+                            }
+
 
                         break;
 
@@ -155,6 +230,29 @@ public class PlayActivity extends AppCompatActivity {
                         rb3.setBackground(ContextCompat.getDrawable(getApplicationContext(),R.drawable.option_default_background));
                         rb1.setBackground(ContextCompat.getDrawable(getApplicationContext(),R.drawable.option_default_background));
 
+
+
+                            switch (questaoAtual) {
+                                case "A":
+                                    playAudioForAnswers.setAudioforAnswer(10);
+                                    break;
+                                case "B":
+                                    playAudioForAnswers.setAudioforAnswer(10);
+                                    break;
+                                case "C":
+                                    playAudioForAnswers.setAudioforAnswer(10);
+                                    break;
+                                case "D":
+                                    playAudioForAnswers.setAudioforAnswer(10);
+                                    break;
+                                case "E":
+                                    playAudioForAnswers.setAudioforAnswer(8); //certo
+                                    break;
+                                case "F":
+                                    playAudioForAnswers.setAudioforAnswer(10);
+                                    break;
+                            }
+
                         break;
                 }
 
@@ -167,10 +265,8 @@ public class PlayActivity extends AppCompatActivity {
 
                 if (!answerd) {
                     if (rb1.isChecked() || rb2.isChecked() || rb3.isChecked() || rb4.isChecked()) {
-
                         quizOperation();
                     } else {
-
                         Toast.makeText(PlayActivity.this, "Por favor, selecione uma resposta ", Toast.LENGTH_SHORT).show();
                     }
                 }
@@ -194,7 +290,6 @@ public class PlayActivity extends AppCompatActivity {
         rb2.setTextColor(Color.BLACK);
         rb3.setTextColor(Color.BLACK);
         rb4.setTextColor(Color.BLACK);
-
 
         if (questionCounter < questionTotalCount) {
             currentQuestions = questionList.get(questionCounter);

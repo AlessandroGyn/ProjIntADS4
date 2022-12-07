@@ -53,27 +53,22 @@ public class QuizDbHelper extends SQLiteOpenHelper {
     private void fillQuestionsTable()
     {
 
-        Questions q1 = new Questions("Android is what ?","OS","Drivers","Software","Hardware",1);
+        Questions q1 = new Questions("A","Som 1","Som 2","Som 3","Som 4",1);
         addQuestions(q1);
 
-
-        Questions q2 = new Questions("Full form of PC is ?","OS","Personal Computer","Pocket Computer","Hardware",2);
+        Questions q2 = new Questions("B","Som 1","Som 2","Som 3","Som 4",2);
         addQuestions(q2);
 
-
-        Questions q3 = new Questions("Windows is what ?","Easy Software","Hardware Device","Operating System","Hardware",3);
+        Questions q3 = new Questions("C","Som 1","Som 2","Som 3","Som 4",3);
         addQuestions(q3);
 
-
-        Questions q4 = new Questions("Unity is used for what ?","Game Development","Movie Making","Firmware","Hardware",1);
+        Questions q4 = new Questions("D","Som 1","Som 2","Som 3","Som 4",1);
         addQuestions(q4);
 
-
-        Questions q5 = new Questions("RAM stands for ","Windows","Drivers","GUI","Random Access Memory",4);
+        Questions q5 = new Questions("E","Som 1","Som 2","Som 3","Som 4",4);
         addQuestions(q5);
 
-
-        Questions q6 = new Questions("Chrome is what ?","OS","Browser","Tool","New Browser",2);
+        Questions q6 = new Questions("F","Som 1","Som 2","Som 3","Som 4",2);
         addQuestions(q6);
     }
 

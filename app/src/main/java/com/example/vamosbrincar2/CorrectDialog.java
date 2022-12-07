@@ -33,8 +33,8 @@ public class CorrectDialog {
         btCorrectDilaog.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                correctDialog.dismiss();
                 playActivity.showQuestions();
+                correctDialog.dismiss();
             }
         });
 
